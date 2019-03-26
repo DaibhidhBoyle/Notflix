@@ -73,4 +73,5 @@ class Content
     def self.map_items(content_data)
       return content_data.map { |content| Content.new(content) }
   end
+  
 end

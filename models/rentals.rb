@@ -66,4 +66,22 @@ end
     sql = "DELETE FROM rentals"
     SqlRunner.run(sql)
   end
+
+  def user()
+  sql = "SELECT * FROM users
+  WHERE id = $1"
+  values = [@user_id]
+  results = SqlRunner.run( sql, values )
+  return User.new( results.first )
+
+end
+
+  def content()
+  sql = "SELECT * FROM content
+  WHERE id = $1"
+  values = [@content_id]
+  results = SqlRunner.run(sql, values)
+  return Content.new( results.first)
+end
+
 end

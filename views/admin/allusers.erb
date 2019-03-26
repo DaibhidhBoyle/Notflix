@@ -1,15 +1,18 @@
-<table style="width:100%">
+
+<table>
   <tr>
     <th>User_name</th>
     <th>Wallet</th>
     <th>Rentals</th>
   </tr>
-
-    <%@users.each do |user|%>
+  <%@users.each do |user|%>
     <tr>
-    <td> <%user.user_name %> </td>
-    <td> <%user.wallet %> </td>
+    <td> <%=user.user_name %> </td>
+    <td> <%=user.wallet %> </td>
+    <td> <button type="button">rentals</button> </td>
+
     </tr>
-    <%end%>
+  <% end %>
+
 
 </table>

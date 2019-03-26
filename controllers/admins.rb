@@ -7,7 +7,6 @@ require_relative( '../models/user.rb' )
 also_reload( '../models/*' )
 
 get '/admin' do
-  erb(:"admin/adminsearch")
 end
 
 get '/admin/users' do
@@ -16,5 +15,6 @@ get '/admin/users' do
 end
 
 get '/admin/rentals' do
-  erb
+  @rental = Rental.all
+  erb(:'admin/allrentals')
 end
