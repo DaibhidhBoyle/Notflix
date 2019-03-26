@@ -1,0 +1,24 @@
+<html>
+<head>
+  <title>Notflix</title>
+</head>
+<body>
+<main class="flex flex--row">
+  <nav>
+    <ul>
+      <li>
+        <a href="/"> Home </a>
+      <li>
+        <a href="/user/profile"> User </a>
+      </li>
+      <li>
+        <a href="/user/rentals">Your Videos</a>
+      </li>
+    </ul>
+  </nav>
+  <section id="content">
+  <%= yield %>
+  </section>
+  </main>
+</body>
+</html>
