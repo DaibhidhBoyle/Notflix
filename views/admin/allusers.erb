@@ -4,10 +4,12 @@
     <th>Wallet</th>
     <th>Rentals</th>
   </tr>
-  <tr>
+
     <%@users.each do |user|%>
-    <td><%user.user_name%></td>
-    <td><%user.wallet%></td>
-  </tr>
+    <tr>
+    <td> <%user.user_name %> </td>
+    <td> <%user.wallet %> </td>
+    </tr>
+    <%end%>
 
 </table>

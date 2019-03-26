@@ -12,7 +12,7 @@ end
 
 get '/admin/users' do
   @users = User.all
-  erb(:"admin/allusers")
+  erb(:'admin/allusers')
 end
 
 get '/admin/rentals' do
