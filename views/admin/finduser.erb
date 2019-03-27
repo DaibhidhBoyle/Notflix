@@ -1,12 +1,10 @@
-<form action="/admin/users/find" method="post"><input type="text" id="name_search" name="name_user" placeholder="Search for names.."><input type="submit" value="Search"></form>
-
 <table>
   <tr>
     <th>User_name</th>
     <th>Wallet</th>
     <th>Rentals</th>
   </tr>
-  <%@users.each do |user|%>
+  <% @users.each do |user|%>
   <tr>
     <td> <%=user.user_name %> </td>
     <td> <%=user.wallet %> </td>
@@ -14,6 +12,3 @@
 
   </tr>
   <% end %>
-
-
-</table>

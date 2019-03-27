@@ -102,7 +102,7 @@ rental1 = Rental.new({
   "user_id" => user1.id,
   "content_id" => content1.id,
   "start_date" => "2019-03-11",
-  "end_date" => "2019-03-18",
+  "end_date" => "2019-03-30",
   })
 
   rental2 = Rental.new({

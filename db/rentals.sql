@@ -4,7 +4,7 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
   id SERIAL8 primary key,
-  user_name VARCHAR(255),
+  user_name VARCHAR(255) UNIQUE,
   wallet INT4
 );
 

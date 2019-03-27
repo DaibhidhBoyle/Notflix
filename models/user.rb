@@ -7,11 +7,11 @@ class User
   attr_accessor :user_name, :wallet
 
   def initialize(options)
+    # binding.pry
     @id = options['id'].to_i if options['id']
     @user_name = options['user_name']
     @wallet = options['wallet']
   end
-
 
   def save()
     sql = "INSERT INTO users
@@ -73,6 +73,17 @@ class User
     WHERE id = $1"
     values = [id]
     result = SqlRunner.run(sql ,values).first
+    user = User.new(result)
+    return user
+  end
+
+  def self.find_by_name(user_name)
+    sql = "SELECT * FROM users
+    WHERE user_name = $1"
+    values = [user_name]
+      # binding.pry
+    result = SqlRunner.run(sql ,values).first
+
     user = User.new(result)
     return user
   end

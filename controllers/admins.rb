@@ -18,3 +18,18 @@ get '/admin/rentals' do
   @rental = Rental.all
   erb(:'admin/allrentals')
 end
+
+post '/admin/users/find' do
+  name_user = params['name_user']
+  user = User.find_by_name(name_user)
+  @users = [user]
+  erb(:'admin/finduser')
+
+post '/admin/rentals/find' do
+  title = params['title']
+  rental = content.find_by_name(name_user)
+  @users = [user]
+  erb(:'admin/findrental')
+end 
+
+end
