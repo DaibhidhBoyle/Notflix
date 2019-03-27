@@ -8,8 +8,8 @@ class ContentTest < MiniTest::Test
     @content1 = Content.new('title' => 'Geralds game', 'type' => 'movie', 'cost' => 1)
   end
 
-def test_title
-  assert_equal('The Umbrella Academy', @content1.title)
-end
+  def test_title
+    assert_equal('The Umbrella Academy', @content1.title)
+  end
 
 end

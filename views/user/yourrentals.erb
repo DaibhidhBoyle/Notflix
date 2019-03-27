@@ -1,0 +1,15 @@
+<table>
+  <tr>
+    <th>Title</th>
+    <th>End Date</th>
+    <th>Watch Now</th>
+  </tr>
+  <%@rentals.each do |rental|%>
+  <tr>
+    <td><%=rental.title %> </td>
+    <td><%=rental.end_date %> </td>
+    <td> <button type="button">Watch Now</button> </td>
+
+  </tr>
+  <% end %>
+</table>

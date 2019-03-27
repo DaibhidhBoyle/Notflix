@@ -103,30 +103,30 @@ rental1 = Rental.new({
   "content_id" => content1.id,
   "start_date" => "2019-03-11",
   "end_date" => "2019-03-18",
-})
+  })
 
-rental2 = Rental.new({
-  "user_id" => user9.id,
-  "content_id" => content15.id,
-  "start_date" => "2019-03-12",
-  "end_date" => "2019-03-15",
-})
+  rental2 = Rental.new({
+    "user_id" => user9.id,
+    "content_id" => content15.id,
+    "start_date" => "2019-03-12",
+    "end_date" => "2019-03-26",
+    })
 
-rental3 = Rental.new({
-  "user_id" => user9.id,
-  "content_id" => content15.id,
-  "start_date" => "2019-03-16",
-  "end_date" => "2019-03-19",
-})
+    rental3 = Rental.new({
+      "user_id" => user9.id,
+      "content_id" => content15.id,
+      "start_date" => "2019-03-27",
+      "end_date" => "2019-03-30",
+      })
 
-rental4 = Rental.new({
-  "user_id" => user20.id,
-  "content_id" => content18.id,
-  "start_date" => "2019-03-19",
-  "end_date" => "2019-03-20",
-})
+      rental4 = Rental.new({
+        "user_id" => user20.id,
+        "content_id" => content18.id,
+        "start_date" => "2019-03-19",
+        "end_date" => "2019-03-20",
+        })
 
-rental1.save
-rental2.save
-rental3.save
-rental4.save
+        rental1.save
+        rental2.save
+        rental3.save
+        rental4.save
