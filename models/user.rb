@@ -49,6 +49,14 @@ class User
     return results.map { |content| Content.new(content) }
   end
 
+  def current_rentals()
+    sql = "SELECT * FROM rentals
+    WHERE end_date >= NOW() AND user_id = $1"
+    values = [@id]
+    results = SqlRunner.run(sql, values)
+    return results.map { |rental| Rental.new(rental) }
+  end
+
   def self.all()
     sql = "SELECT * FROM users"
     user_data = SqlRunner.run(sql)

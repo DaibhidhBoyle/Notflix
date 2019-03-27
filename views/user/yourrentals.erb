@@ -4,10 +4,10 @@
     <th>End Date</th>
     <th>Watch Now</th>
   </tr>
-  <%@rentals.each do |rental|%>
+  <%@rental.each do |rental_info|%>
   <tr>
-    <td><%=rental.title %> </td>
-    <td><%=rental.end_date %> </td>
+    <td><%=rental_info.content.title %> </td>
+    <td><%=rental_info.end_date %> </td>
     <td> <button type="button">Watch Now</button> </td>
 
   </tr>

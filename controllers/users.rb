@@ -16,20 +16,20 @@ get '/user/:id/update' do
   erb(:'user/update')
 end
 
-# post '/user/:id' do
-#   user = User.new(params)
-#   user.update
-#   redirect to "/user/#{params['id']}"
-# end
+post '/user/:id' do
+  user = User.new(params)
+  user.update
+  redirect to "/user/#{params['id']}"
+end
 
-# post '/user/:id/delete' do
-#   user = User.find(params['id'])
-#   user.delete
-#   redirect to '/'
-# end
+post '/user/:id/delete' do
+  user = User.find(params['id'])
+  user.delete
+  redirect to '/'
+end
 
 get '/user/:id/rentals' do
-  @user = User.find(params['id'])
-  @rentals = Rental.current_rentals
+  user = User.find(params['id'])
+  @rental = user.current_rentals
   erb(:"user/yourrentals")
 end

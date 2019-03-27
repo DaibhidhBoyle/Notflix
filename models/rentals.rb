@@ -84,13 +84,4 @@ class Rental
     return Content.new( results.first)
   end
 
-  def self.current_rentals
-    sql = "SELECT rentals.*, content.* FROM rentals
-    INNER JOIN content ON rentals.content_id = content.id
-    WHERE end_date >= NOW() AND user_id = $1"
-    values = [@user_id]
-    rental_data = SqlRunner.run(sql, values)
-    return map_items(rental_data)
-  end
-
 end
