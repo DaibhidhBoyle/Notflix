@@ -7,6 +7,7 @@ require_relative( '../models/user.rb' )
 also_reload( '../models/*' )
 
 get '/admin' do
+  erb(:'admin/home')
 end
 
 get '/admin/users' do
@@ -24,12 +25,12 @@ post '/admin/users/find' do
   user = User.find_by_name(name_user)
   @users = [user]
   erb(:'admin/finduser')
+end
 
 post '/admin/rentals/find' do
   title = params['title']
-  rental = content.find_by_name(name_user)
-  @users = [user]
+  rental = Rental.find_by_content_title(title)
+  @rental = [rental]
+  binding.pry
   erb(:'admin/findrental')
-end 
-
 end

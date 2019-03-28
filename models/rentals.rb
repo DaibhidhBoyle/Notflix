@@ -62,6 +62,16 @@ class Rental
     return rental
   end
 
+  def self.find_by_content_title(title)
+    sql = "SELECT rentals.* FROM rentals
+    INNER JOIN content ON rentals.content_id = content.id
+    WHERE title = $1"
+    values = [title]
+    rental_data = SqlRunner.run(sql ,values)
+    rentals = map_items(rental_data)
+    return rentals
+  end
+
   def self.delete_all
     sql = "DELETE FROM rentals"
     SqlRunner.run(sql)

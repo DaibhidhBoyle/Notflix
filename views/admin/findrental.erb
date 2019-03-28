@@ -1,0 +1,18 @@
+
+
+<table>
+
+  <tr>
+    <th>User</th>
+    <th>video</th>
+    <th>Start Date</th>
+    <th>End Date</th>
+  </tr>
+  <%@rental.each do |rental|%>
+  <tr>
+    <td> <%= rental.user.user_name %> </td>
+    <td> <%= rental.content.title%> </td>
+    <td> <%= rental.start_date %> </td>
+    <td> <%= rental.end_date %> </td>
+  </tr>
+  <% end %>

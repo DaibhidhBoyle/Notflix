@@ -81,7 +81,6 @@ class User
     sql = "SELECT * FROM users
     WHERE user_name = $1"
     values = [user_name]
-      # binding.pry
     result = SqlRunner.run(sql ,values).first
 
     user = User.new(result)
