@@ -13,7 +13,7 @@
     <td> <%= rental.content.title%> </td>
     <td> <%= rental.start_date %> </td>
     <td> <%= rental.end_date %> </td>
-    <td> <button type="button">User</button> </td>
+    <td> <button type="button"><a href = "http://localhost:4567/user/<%=rental.user.id%>"> User</a></button> </td>
     <td> <button type="button">Video</button> </td>
   </tr>
   <% end %>

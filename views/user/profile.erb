@@ -1,6 +1,6 @@
 <h2><%= @user.user_name %></h2>
 
-<button type="button">Change User Name</button>
-<button type="button">Your Rentals</button>
+<button type="button"><a href = "http://localhost:4567/user/<%=@user.id%>/update">Change User Name</a></button>
+<button type="button"><a href = "http://localhost:4567/user/<%=@user.id%>/rentals">Your Rentals</a></button>
 
 <form action="/user/<%=@user.id%>/delete" method="POST"><input type="submit" value="Delete Account"></form>

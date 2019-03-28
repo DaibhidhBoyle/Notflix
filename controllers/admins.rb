@@ -31,6 +31,5 @@ post '/admin/rentals/find' do
   title = params['title']
   rental = Rental.find_by_content_title(title)
   @rental = [rental]
-  binding.pry
   erb(:'admin/findrental')
 end
