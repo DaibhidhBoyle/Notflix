@@ -8,3 +8,7 @@ also_reload( '../models/*' )
 get '/' do
   erb( :home )
 end
+
+get '/watch' do
+  erb( :watch)
+end
