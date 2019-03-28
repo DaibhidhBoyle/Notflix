@@ -12,3 +12,15 @@ end
 get '/watch' do
   erb( :watch)
 end
+
+get '/rent/:id' do
+  @users = User.all
+  @content = Content.find(params[:id])
+  erb( :rent)
+end
+
+post '/rent/new' do
+  rental = Rental.new(params)
+  rental.start_date
+  rental.save
+end

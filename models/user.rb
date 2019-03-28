@@ -1,3 +1,4 @@
+require 'date'
 require('pry-byebug')
 require_relative('../db/sql_runner')
 
@@ -27,11 +28,9 @@ class User
 
   def update()
     sql = "UPDATE users
-    SET
-    (user_name, wallet) =
-    ($1, $2)
-    WHERE id = $3"
-    values = [@user_name, @wallet, @id]
+    SET user_name = $1
+    WHERE id = $2"
+    values = [@user_name, @id]
     result = SqlRunner.run(sql, values)
   end
 
@@ -56,6 +55,11 @@ class User
     results = SqlRunner.run(sql, values)
     return results.map { |rental| Rental.new(rental) }
   end
+
+  def self.start_date
+    User.start_date == Date.today
+  end 
+
 
   def self.all()
     sql = "SELECT * FROM users"

@@ -94,4 +94,5 @@ class Rental
     return Content.new( results.first)
   end
 
+
 end
