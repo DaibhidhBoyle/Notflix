@@ -32,5 +32,6 @@ post '/rent/:content_id/new' do
   rental.start_date_set
   rental.end_date_calculation(params[:duration].to_i)
   rental.save
+  rental.user.update_wallet(rental.content.cost.to_i)
   redirect to redirect to "/"
 end

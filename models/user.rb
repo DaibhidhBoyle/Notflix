@@ -10,7 +10,7 @@ class User
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @user_name = options['user_name']
-    @wallet = options['wallet']
+    @wallet = options['wallet'].to_i
   end
 
   def save()
@@ -30,6 +30,14 @@ class User
     SET user_name = $1
     WHERE id = $2"
     values = [@user_name, @id]
+    result = SqlRunner.run(sql, values)
+  end
+
+  def update_wallet(cost)
+    sql = "UPDATE users
+    SET wallet = (CAST($1 AS int) - CAST($2 AS int))
+    WHERE id = $3"
+    values = [@wallet, cost, @id]
     result = SqlRunner.run(sql, values)
   end
 
@@ -54,9 +62,6 @@ class User
     results = SqlRunner.run(sql, values)
     return results.map { |rental| Rental.new(rental) }
   end
-
-
-
 
   def self.all()
     sql = "SELECT * FROM users"

@@ -10,7 +10,7 @@ class Content
     @id = options['id'].to_i if options['id']
     @title = options['title']
     @type = options['type']
-    @cost = options['cost']
+    @cost = options['cost'].to_i
   end
 
   def save()

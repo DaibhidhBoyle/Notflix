@@ -47,6 +47,34 @@ class Rental
     SqlRunner.run(sql, values)
   end
 
+
+  def start_date_set
+    @start_date = Date.today
+  end
+
+  def end_date_calculation(duration)
+    now = Date.today
+    @end_date = (now + duration)
+  end
+
+  def user()
+    sql = "SELECT * FROM users
+    WHERE id = $1"
+    values = [@user_id]
+    results = SqlRunner.run( sql, values )
+    return User.new( results.first )
+
+  end
+
+  def content()
+    sql = "SELECT * FROM content
+    WHERE id = $1"
+    values = [@content_id]
+    results = SqlRunner.run(sql, values)
+    return Content.new( results.first)
+  end
+
+
   def self.all()
     sql = "SELECT * FROM rentals"
     rental_data = SqlRunner.run(sql)
@@ -80,33 +108,6 @@ class Rental
   def self.delete_all
     sql = "DELETE FROM rentals"
     SqlRunner.run(sql)
-  end
-
-  def user()
-    sql = "SELECT * FROM users
-    WHERE id = $1"
-    values = [@user_id]
-    results = SqlRunner.run( sql, values )
-    return User.new( results.first )
-
-  end
-
-  def content()
-    sql = "SELECT * FROM content
-    WHERE id = $1"
-    values = [@content_id]
-    results = SqlRunner.run(sql, values)
-    return Content.new( results.first)
-  end
-
-
-  def start_date_set
-    @start_date = Date.today
-  end
-
-  def end_date_calculation(duration)
-    now = Date.today
-    @end_date = (now + duration)
   end
 
 end
