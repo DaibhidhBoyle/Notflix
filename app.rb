@@ -3,6 +3,7 @@ require( 'sinatra/contrib/all' )
 require_relative('controllers/admins')
 require_relative('controllers/users')
 also_reload( '../models/*' )
+require( 'pry-byebug')
 
 
 get '/' do
@@ -19,8 +20,17 @@ get '/rent/:id' do
   erb( :rent)
 end
 
-post '/rent/new' do
+# post '/rent/:content_id/new' do #ac
+#   binding.pry
+#   rental = Rental.new(params)
+#   rental.save
+#   redirect to redirect to "/"
+# end
+
+post '/rent/:content_id/new' do
   rental = Rental.new(params)
-  rental.start_date
+  rental.start_date_set
+  rental.end_date_calculation(params[:duration].to_i)
   rental.save
+  redirect to redirect to "/"
 end

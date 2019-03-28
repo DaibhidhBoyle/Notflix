@@ -1,5 +1,6 @@
 require('pry-byebug')
 require_relative('../db/sql_runner')
+require 'date'
 
 class Rental
 
@@ -9,7 +10,11 @@ class Rental
     @id = options['id'].to_i if options['id']
     @user_id = options['user_id']
     @content_id = options['content_id']
+    # @duration = options['duration'].to_i
+    #ac
     @start_date = options['start_date']
+    #ac
+    # @end_date = @start_date + @duration
     @end_date = options['end_date']
   end
 
@@ -94,5 +99,14 @@ class Rental
     return Content.new( results.first)
   end
 
+
+  def start_date_set
+    @start_date = Date.today
+  end
+
+  def end_date_calculation(duration)
+    now = Date.today
+    @end_date = (now + duration)
+  end
 
 end

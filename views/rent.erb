@@ -1,7 +1,7 @@
 
-<form action="/rent/new" method="post">
+<form action="/rent/<%=@content.id%>/new" method="post">
   <label>
-    Select a user to rent <% @content.title %>:
+    Select a user to rent <%= @content.title %>:
 
     <select name="user_id">
       <% @users.each do |user| %>
@@ -13,12 +13,14 @@
 
 <label>
   For how long:
-    <select name="end_date">
+    <select name="duration">
       <option value="3">Three Days</option>
       <option value="7">Week</option>
       <option value="14">Two Weeks</option>
     </select>
 </label>
+
+<input type="hidden" name="start_date" value="<%= Date.today %>" >
 
   <input class="btn btn--action" type='submit' value="Rent">
 </form>

@@ -8,7 +8,6 @@ class User
   attr_accessor :user_name, :wallet
 
   def initialize(options)
-    # binding.pry
     @id = options['id'].to_i if options['id']
     @user_name = options['user_name']
     @wallet = options['wallet']
@@ -56,9 +55,7 @@ class User
     return results.map { |rental| Rental.new(rental) }
   end
 
-  def self.start_date
-    User.start_date == Date.today
-  end 
+
 
 
   def self.all()
