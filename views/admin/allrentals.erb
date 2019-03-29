@@ -14,7 +14,8 @@
     <td> <%= rental.start_date %> </td>
     <td> <%= rental.end_date %> </td>
     <td> <button type="button"><a href = "http://localhost:4567/user/<%=rental.user.id%>"> User</a></button> </td>
-    <td> <button type="button">Video</button> </td>
+    <td> <a href="/watch/<%= rental.user_id%>"><button type="button">Video</button></a> </td>
+    
   </tr>
   <% end %>
 </table>

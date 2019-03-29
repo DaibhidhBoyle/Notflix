@@ -4,22 +4,23 @@ require_relative('../db/sql_runner')
 class Content
 
   attr_reader :id
-  attr_accessor :title, :type, :cost
+  attr_accessor :title, :type, :cost, :watch
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @title = options['title']
     @type = options['type']
     @cost = options['cost'].to_i
+    @watch = options['watch']
   end
 
   def save()
     sql = "INSERT INTO content
-    (title, type, cost)
+    (title, type, cost, watch)
     VALUES
-    ($1, $2, $3)
+    ($1, $2, $3, $4)
     RETURNING id"
-    values = [@title, @type, @cost]
+    values = [@title, @type, @cost, @watch]
     result = SqlRunner.run(sql, values)
     id = result.first["id"]
     @id = id.to_i

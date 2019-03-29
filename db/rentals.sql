@@ -13,7 +13,8 @@ CREATE TABLE content (
   id SERIAL8 primary key,
   title VARCHAR(255),
   type VARCHAR(255),
-  cost INT4
+  cost INT4,
+  watch VARCHAR(255)
 );
 
 CREATE TABLE rentals (

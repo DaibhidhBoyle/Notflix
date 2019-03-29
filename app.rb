@@ -10,7 +10,8 @@ get '/' do
   erb( :home )
 end
 
-get '/watch' do
+get '/watch/:id' do
+  @content = Content.find(params[:id])
   erb( :watch)
 end
 
