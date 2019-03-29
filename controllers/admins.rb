@@ -33,3 +33,9 @@ post '/admin/rentals/find' do
   @rental = [rental]
   erb(:'admin/findrental')
 end
+
+post '/admin/rentals/delete/:id' do
+  rental = Rental.find(params['id'])
+  rental.delete
+  redirect to '/'
+end

@@ -15,7 +15,8 @@
     <td> <%= rental.end_date %> </td>
     <td> <button type="button"><a href = "http://localhost:4567/user/<%=rental.user.id%>"> User</a></button> </td>
     <td> <a href="/watch/<%= rental.user_id%>"><button type="button">Video</button></a> </td>
-    
+    <td>
   </tr>
+  <td> <form action="/admin/rentals/delete/<%=rental.id%>" method="POST"><input type="submit" value="Return"></form></td>  
   <% end %>
 </table>
