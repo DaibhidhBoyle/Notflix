@@ -12,6 +12,10 @@
   right: 20px;
 }
 
+#search {
+  text-align: center;
+}
+
 h2 {
   color: white;
 }
@@ -20,6 +24,19 @@ h3 {
   color: white;
 }
 
+table {
+  color: white;
+  width: 100%;
+  height: 100px;
+}
+
+td {
+  text-align: center;
+}
+
+label {
+  color: white;
+}
 ul {
   list-style-type: none
 }
