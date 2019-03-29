@@ -33,3 +33,14 @@ get '/user/:id/rentals' do
   @rental = user.current_rentals
   erb(:"user/yourrentals")
 end
+
+get '/user/:id/updatepic' do
+  @user = User.find(params['id'])
+  erb(:'user/updatepic')
+end
+
+post '/user/:id/updatepic' do
+  user = User.new(params)
+  user.update_profile_pic
+  redirect to "/user/#{params['id']}"
+end

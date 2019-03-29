@@ -5,21 +5,22 @@ require_relative('../db/sql_runner')
 class User
 
   attr_reader :id
-  attr_accessor :user_name, :wallet
+  attr_accessor :user_name, :wallet, :profile_pic
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @user_name = options['user_name']
     @wallet = options['wallet'].to_i
+    @profile_pic = options['profile_pic']
   end
 
   def save()
     sql = "INSERT INTO users
-    (user_name, wallet)
+    (user_name, wallet, profile_pic)
     VALUES
-    ($1, $2)
+    ($1, $2, $3)
     RETURNING id"
-    values = [@user_name, @wallet]
+    values = [@user_name, @wallet, @profile_pic]
     result = SqlRunner.run(sql, values)
     id = result.first["id"]
     @id = id.to_i
@@ -38,6 +39,14 @@ class User
     SET wallet = (CAST($1 AS int) - CAST($2 AS int))
     WHERE id = $3"
     values = [@wallet, cost, @id]
+    result = SqlRunner.run(sql, values)
+  end
+
+  def update_profile_pic
+    sql = "UPDATE users
+    SET profile_pic = $1
+    WHERE id = $2"
+    values = [@profile_pic, @id]
     result = SqlRunner.run(sql, values)
   end
 

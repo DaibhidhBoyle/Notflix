@@ -5,7 +5,8 @@ DROP TABLE IF EXISTS users;
 CREATE TABLE users (
   id SERIAL8 primary key,
   user_name VARCHAR(255) UNIQUE,
-  wallet INT4
+  wallet INT4,
+  profile_pic VARCHAR(255)
 );
 
 CREATE TABLE content (

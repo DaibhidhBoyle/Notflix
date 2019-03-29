@@ -1,4 +1,7 @@
+<a href="/user/<%= @user.id %>/updatepic"><img src="<%= @user.profile_pic %>" alt="Profile Picture" height="100" width="100"></a>
 <h2><%= @user.user_name %></h2>
+<h3>£<%= @user.wallet %></h3>
+
 
 <button type="button"><a href = "http://localhost:4567/user/<%=@user.id%>/update">Change User Name</a></button>
 <button type="button"><a href = "http://localhost:4567/user/<%=@user.id%>/rentals">Your Rentals</a></button>
