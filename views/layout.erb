@@ -1,13 +1,15 @@
+<!DOCTYPE html>
 <html>
 <head>
-  <title>Notflix</title>
+   <link href="/styles.css" type="text/css" rel="stylesheet">
+   <link rel="icon" href="/netflix.png">
 </head>
-<body>
-<main class="flex flex--row">
+<div id='header'>
+<a href="/"><img src="/notflix.jpg" height="75" width="200"></a>
+</div>
+<div id='nav'>
   <nav>
     <ul>
-      <li>
-        <a href="/"> Home </a>
       <li>
         <a href="/user/<%=rand(1..24) %>"> User </a>
       </li>
@@ -16,6 +18,10 @@
       </li>
     </ul>
   </nav>
+  </div>
+<body>
+<main class="flex flex--row">
+
   <section id="content">
   <%= yield %>
   </section>

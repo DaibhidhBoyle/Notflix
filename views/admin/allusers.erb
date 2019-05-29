@@ -1,4 +1,6 @@
-<form action="/admin/users/find" method="post"><input type="text" id="name_search" name="name_user" placeholder="Search for names.."><input type="submit" value="Search"></form>
+<div id='search'>
+  <form action="/admin/users/find" method="post"><input type="text" id="name_search" name="name_user" placeholder="Search for names.."><input type="submit" value="Search"></form>
+</div>
 
 <table>
   <tr>
@@ -8,7 +10,7 @@
   </tr>
   <%@users.each do |user|%>
   <tr>
-    <td> <%=user.user_name %> </td>
+    <td> <%=user.user_name%> </td>
     <td> <%=user.wallet %> </td>
     <td> <button type="button"><a href = "http://localhost:4567/user/<%=user.id %>">profile</a></button> </td>
     <td> <button type="button"><a href = "http://localhost:4567/user/<%=user.id%>/rentals">rentals</a></button> </td>

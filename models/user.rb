@@ -1,6 +1,6 @@
 require 'date'
-require('pry-byebug')
 require_relative('../db/sql_runner')
+require( 'pry-byebug' )
 
 class User
 
@@ -92,14 +92,32 @@ class User
     return user
   end
 
-  def self.find_by_name(user_name)
-    sql = "SELECT * FROM users
-    WHERE user_name = $1"
-    values = [user_name]
-    result = SqlRunner.run(sql ,values).first
+  def self.find_by_name(string_entered)
+    lower_string_entered= string_entered.downcase
+    user_name_search = lower_string_entered.split(' ')
+    users = []
 
-    user = User.new(result)
-    return user
+    for letter in user_name_search
+
+      sql = "SELECT * FROM users
+      WHERE lower(user_name) LIKE $1"
+      values = ["%" + letter + "%"]
+      result = SqlRunner.run(sql ,values)
+      users << result.map{|single_user| User.new(single_user)}
+    end
+    users = users.flatten
+
+    if users.empty?
+      sql = "SELECT * FROM users
+      WHERE lower(user_name) LIKE $1"
+      values = [lower_string_entered]
+      result = SqlRunner.run(sql ,values).first
+
+      user = User.new(result)
+      users << user
+    end
+
+    return users
   end
 
   def self.delete_all

@@ -3,7 +3,6 @@ require( 'sinatra/contrib/all' )
 require_relative('controllers/admins')
 require_relative('controllers/users')
 also_reload( '../models/*' )
-require( 'pry-byebug')
 
 
 get '/' do
@@ -20,13 +19,6 @@ get '/rent/:id' do
   @content = Content.find(params[:id])
   erb( :rent)
 end
-
-# post '/rent/:content_id/new' do #ac
-#   binding.pry
-#   rental = Rental.new(params)
-#   rental.save
-#   redirect to redirect to "/"
-# end
 
 post '/rent/:content_id/new' do
   rental = Rental.new(params)

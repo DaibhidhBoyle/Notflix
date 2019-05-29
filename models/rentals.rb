@@ -1,4 +1,3 @@
-require('pry-byebug')
 require_relative('../db/sql_runner')
 require 'date'
 
@@ -10,11 +9,7 @@ class Rental
     @id = options['id'].to_i if options['id']
     @user_id = options['user_id']
     @content_id = options['content_id']
-    # @duration = options['duration'].to_i
-    #ac
     @start_date = options['start_date']
-    #ac
-    # @end_date = @start_date + @duration
     @end_date = options['end_date']
   end
 
@@ -95,15 +90,42 @@ class Rental
     return rental
   end
 
-  def self.find_by_content_title(title)
-    sql = "SELECT rentals.* FROM rentals
-    INNER JOIN content ON rentals.content_id = content.id
-    WHERE title = $1"
-    values = [title]
-    rental_data = SqlRunner.run(sql ,values)
-    rentals = map_items(rental_data)
-    return rentals
+  def self.find_by_content_title(string_entered)
+  #   sql = "SELECT rentals.* FROM rentals
+  #   INNER JOIN content ON rentals.content_id = content.id
+  #   WHERE title = $1"
+  #   values = [title]
+  #   rental_data = SqlRunner.run(sql ,values)
+  #   rentals = map_items(rental_data)
+  #   return rentals
+  # end
+
+  lower_string_entered= string_entered.downcase
+  title_search = lower_string_entered.split(' ')
+  content = []
+
+  for letter in title_search
+
+    sql = "SELECT * FROM content
+    WHERE lower(title) LIKE $1"
+    values = ["%" + letter + "%"]
+    result = SqlRunner.run(sql ,values)
+    content << result.map{|single_content| Content.new(single_content)}
   end
+  content = content.flatten
+
+  if content.empty?
+    sql = "SELECT * FROM users
+    WHERE lower(title) LIKE $1"
+    values = [lower_string_entered]
+    result = SqlRunner.run(sql ,values).first
+
+    single_content = Content.new(result)
+    content << single_content
+  end
+
+  return content
+end
 
   def self.delete_all
     sql = "DELETE FROM rentals"

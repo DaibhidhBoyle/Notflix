@@ -23,7 +23,7 @@ end
 post '/admin/users/find' do
   name_user = params['name_user']
   user = User.find_by_name(name_user)
-  @users = [user]
+  @users = user
   erb(:'admin/finduser')
 end
 
@@ -37,5 +37,5 @@ end
 post '/admin/rentals/delete/:id' do
   rental = Rental.find(params['id'])
   rental.delete
-  redirect to '/'
+  redirect to '/admin/rentals'
 end

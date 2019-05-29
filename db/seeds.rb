@@ -100,33 +100,306 @@ user24.save
 
 rental1 = Rental.new({
   "user_id" => user1.id,
-  "content_id" => content1.id,
-  "start_date" => "2019-03-11",
+  "content_id" => content2.id,
+  "start_date" => "2019-03-22",
   "end_date" => "2019-03-30",
   })
 
   rental2 = Rental.new({
-    "user_id" => user9.id,
-    "content_id" => content15.id,
-    "start_date" => "2019-03-12",
-    "end_date" => "2019-03-26",
+    "user_id" => user1.id,
+    "content_id" => content13.id,
+    "start_date" => "2019-03-23",
+    "end_date" => "2019-04-01",
     })
 
     rental3 = Rental.new({
-      "user_id" => user9.id,
-      "content_id" => content15.id,
-      "start_date" => "2019-03-27",
-      "end_date" => "2019-03-30",
+      "user_id" => user2.id,
+      "content_id" => content3.id,
+      "start_date" => "2019-03-24",
+      "end_date" => "2019-04-02",
       })
 
-      rental4 = Rental.new({
-        "user_id" => user20.id,
-        "content_id" => content18.id,
-        "start_date" => "2019-03-19",
-        "end_date" => "2019-03-20",
+      rental3 = Rental.new({
+        "user_id" => user2.id,
+        "content_id" => content11.id,
+        "start_date" => "2019-03-25",
+        "end_date" => "2019-04-03",
         })
 
-        rental1.save
-        rental2.save
-        rental3.save
-        rental4.save
+        rental4 = Rental.new({
+          "user_id" => user3.id,
+          "content_id" => content4.id,
+          "start_date" => "2019-03-26",
+          "end_date" => "2019-04-04",
+          })
+
+          rental5 = Rental.new({
+            "user_id" => user3.id,
+            "content_id" => content1.id,
+            "start_date" => "2019-03-27",
+            "end_date" => "2019-04-05",
+            })
+
+            rental6 = Rental.new({
+              "user_id" => user4.id,
+              "content_id" => content1.id,
+              "start_date" => "2019-03-28",
+              "end_date" => "2019-04-06",
+              })
+
+              rental6 = Rental.new({
+                "user_id" => user4.id,
+                "content_id" => content3.id,
+                "start_date" => "2019-03-22",
+                "end_date" => "2019-03-30",
+                })
+
+                rental7 = Rental.new({
+                  "user_id" => user5.id,
+                  "content_id" => content13.id,
+                  "start_date" => "2019-03-23",
+                  "end_date" => "2019-04-01",
+                  })
+
+                  rental8 = Rental.new({
+                    "user_id" => user5.id,
+                    "content_id" => content4.id,
+                    "start_date" => "2019-03-24",
+                    "end_date" => "2019-04-02",
+                    })
+
+                    rental9 = Rental.new({
+                      "user_id" => user6.id,
+                      "content_id" => content16.id,
+                      "start_date" => "2019-03-25",
+                      "end_date" => "2019-04-03",
+                      })
+
+                      rental10 = Rental.new({
+                        "user_id" => user6.id,
+                        "content_id" => content8.id,
+                        "start_date" => "2019-03-26",
+                        "end_date" => "2019-04-04",
+                        })
+
+                        rental11 = Rental.new({
+                          "user_id" => user7.id,
+                          "content_id" => content10.id,
+                          "start_date" => "2019-03-27",
+                          "end_date" => "2019-04-05",
+                          })
+
+                          rental12 = Rental.new({
+                            "user_id" => user7.id,
+                            "content_id" => content5.id,
+                            "start_date" => "2019-03-28",
+                            "end_date" => "2019-04-06",
+                            })
+
+                            rental13 = Rental.new({
+                              "user_id" => user8.id,
+                              "content_id" => content3.id,
+                              "start_date" => "2019-03-22",
+                              "end_date" => "2019-03-30",
+                              })
+
+                              rental14 = Rental.new({
+                                "user_id" => user8.id,
+                                "content_id" => content9.id,
+                                "start_date" => "2019-03-23",
+                                "end_date" => "2019-04-01",
+                                })
+
+                                rental15 = Rental.new({
+                                  "user_id" => user9.id,
+                                  "content_id" => content15.id,
+                                  "start_date" => "2019-03-24",
+                                  "end_date" => "2019-04-02",
+                                  })
+
+                                  rental16 = Rental.new({
+                                    "user_id" => user9.id,
+                                    "content_id" => content7.id,
+                                    "start_date" => "2019-03-25",
+                                    "end_date" => "2019-04-03",
+                                    })
+
+                                    rental17 = Rental.new({
+                                      "user_id" => user10.id,
+                                      "content_id" => content1.id,
+                                      "start_date" => "2019-03-26",
+                                      "end_date" => "2019-04-04",
+                                      })
+
+                                      rental18 = Rental.new({
+                                        "user_id" => user10.id,
+                                        "content_id" => content8.id,
+                                        "start_date" => "2019-03-27",
+                                        "end_date" => "2019-04-05",
+                                        })
+
+                                        rental19 = Rental.new({
+                                          "user_id" => user11.id,
+                                          "content_id" => content20.id,
+                                          "start_date" => "2019-03-28",
+                                          "end_date" => "2019-04-06",
+                                          })
+
+                                          rental20 = Rental.new({
+                                            "user_id" => user12.id,
+                                            "content_id" => content3.id,
+                                            "start_date" => "2019-03-22",
+                                            "end_date" => "2019-03-30",
+                                            })
+
+                                            rental21 = Rental.new({
+                                              "user_id" => user12.id,
+                                              "content_id" => content6.id,
+                                              "start_date" => "2019-03-23",
+                                              "end_date" => "2019-04-01",
+                                              })
+
+                                              rental22 = Rental.new({
+                                                "user_id" => user13.id,
+                                                "content_id" => content5.id,
+                                                "start_date" => "2019-03-24",
+                                                "end_date" => "2019-04-02",
+                                                })
+
+                                                rental23 = Rental.new({
+                                                  "user_id" => user13.id,
+                                                  "content_id" => content12.id,
+                                                  "start_date" => "2019-03-25",
+                                                  "end_date" => "2019-04-03",
+                                                  })
+
+                                                  rental24 = Rental.new({
+                                                    "user_id" => user14.id,
+                                                    "content_id" => content19.id,
+                                                    "start_date" => "2019-03-26",
+                                                    "end_date" => "2019-04-04",
+                                                    })
+
+                                                    rental25 = Rental.new({
+                                                      "user_id" => user14.id,
+                                                      "content_id" => content6.id,
+                                                      "start_date" => "2019-03-27",
+                                                      "end_date" => "2019-04-05",
+                                                      })
+
+                                                      rental26 = Rental.new({
+                                                        "user_id" => user15.id,
+                                                        "content_id" => content4.id,
+                                                        "start_date" => "2019-03-28",
+                                                        "end_date" => "2019-04-06",
+                                                        })
+
+                                                        rental27 = Rental.new({
+                                                          "user_id" => user15.id,
+                                                          "content_id" => content18.id,
+                                                          "start_date" => "2019-03-22",
+                                                          "end_date" => "2019-03-30",
+                                                          })
+
+                                                          rental28 = Rental.new({
+                                                            "user_id" => user16.id,
+                                                            "content_id" => content6.id,
+                                                            "start_date" => "2019-03-23",
+                                                            "end_date" => "2019-04-01",
+                                                            })
+
+                                                            rental29 = Rental.new({
+                                                              "user_id" => user16.id,
+                                                              "content_id" => content1.id,
+                                                              "start_date" => "2019-03-24",
+                                                              "end_date" => "2019-04-02",
+                                                              })
+
+                                                              rental30 = Rental.new({
+                                                                "user_id" => user17.id,
+                                                                "content_id" => content4.id,
+                                                                "start_date" => "2019-03-25",
+                                                                "end_date" => "2019-04-03",
+                                                                })
+
+                                                                rental31 = Rental.new({
+                                                                  "user_id" => user17.id,
+                                                                  "content_id" => content8.id,
+                                                                  "start_date" => "2019-03-26",
+                                                                  "end_date" => "2019-04-04",
+                                                                  })
+
+                                                                  rental32 = Rental.new({
+                                                                    "user_id" => user18.id,
+                                                                    "content_id" => content15.id,
+                                                                    "start_date" => "2019-03-27",
+                                                                    "end_date" => "2019-04-05",
+                                                                    })
+
+                                                                    rental33 = Rental.new({
+                                                                      "user_id" => user18.id,
+                                                                      "content_id" => content16.id,
+                                                                      "start_date" => "2019-03-28",
+                                                                      "end_date" => "2019-04-06",
+                                                                      })
+
+                                                                      rental34 = Rental.new({
+                                                                        "user_id" => user19.id,
+                                                                        "content_id" => content15.id,
+                                                                        "start_date" => "2019-03-22",
+                                                                        "end_date" => "2019-03-30",
+                                                                        })
+
+                                                                        rental35 = Rental.new({
+                                                                          "user_id" => user19.id,
+                                                                          "content_id" => content2.id,
+                                                                          "start_date" => "2019-03-23",
+                                                                          "end_date" => "2019-04-01",
+                                                                          })
+
+                                                                          rental36 = Rental.new({
+                                                                            "user_id" => user20.id,
+                                                                            "content_id" => content1.id,
+                                                                            "start_date" => "2019-03-24",
+                                                                            "end_date" => "2019-04-02",
+                                                                            })
+
+                                                                            rental32 = Rental.new({
+                                                                              "user_id" => user20.id,
+                                                                              "content_id" => content3.id,
+                                                                              "start_date" => "2019-03-27",
+                                                                              "end_date" => "2019-04-05",
+                                                                              })
+
+                                                                              rental1.save
+                                                                              rental2.save
+                                                                              rental3.save
+                                                                              rental4.save
+                                                                              rental5.save
+                                                                              rental6.save
+                                                                              rental7.save
+                                                                              rental8.save
+                                                                              rental9.save
+                                                                              rental10.save
+                                                                              rental11.save
+                                                                              rental12.save
+                                                                              rental13.save
+                                                                              rental14.save
+                                                                              rental15.save
+                                                                              rental16.save
+                                                                              rental17.save
+                                                                              rental18.save
+                                                                              rental19.save
+                                                                              rental20.save
+                                                                              rental21.save
+                                                                              rental22.save
+                                                                              rental23.save
+                                                                              rental24.save
+                                                                              rental25.save
+                                                                              rental26.save
+                                                                              rental27.save
+                                                                              rental28.save
+                                                                              rental29.save
+                                                                              rental30.save
+                                                                              rental31.save
+                                                                              rental32.save

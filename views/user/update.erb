@@ -1,4 +1,4 @@
-<img src="<%= @user.profile_pic %>" alt="Profile Picture" height="100" width="100">
+<img src="<%= @user.profile_pic %>" alt="Profile Picture" height="150" width="150">
 <h2>Edit <%= @user.user_name %></h2>
 
 <form method="POST" action="/user/<%= @user.id %>">
@@ -6,7 +6,7 @@
   <div class="form-wrapper">
 
     <div class="form-el">
-      <label for="user_name">User Name:</label>
+      <label for="user_name"></label>
       <input type="text" name="user_name" id="user_name" value="<%= @user.user_name %>"/>
     </div>
 
